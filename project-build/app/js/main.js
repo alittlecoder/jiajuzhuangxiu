@@ -38,7 +38,6 @@ require([
     //This callback is optional.
 
     $(document).ready(function () {
-       alert($());
         angular.bootstrap(document, ['myApp']);
     });
 });

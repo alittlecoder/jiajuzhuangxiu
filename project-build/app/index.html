@@ -12,10 +12,10 @@
 </head>
 <body>
 
-<div>
-    <a href="#/view1" class="btn">view1</a>
-    <a href="#/view2" class="btn">view2</a>
-</div>
+<!--<div>-->
+    <!--<a href="#/view1" class="btn">view1</a>-->
+    <!--<a href="#/view2" class="btn">view2</a>-->
+<!--</div>-->
 <header>
     <div class="row-1">
         <div class="main">
@@ -23,15 +23,11 @@
                 <div class="grid_12">
                     <nav>
                         <ul class="menu">
-                            <!--<li><a class="active" href="index.html">About Us</a></li>-->
-                            <!--<li><a href="services.html">Services</a></li>-->
-                            <!--<li><a href="catalogue.html">Catalogue</a></li>-->
-                            <!--<li><a href="pricing.html">Pricing</a></li>-->
-                            <!--<li><a href="contacts.html">Contacts</a></li>-->
-                            <!--<a href="#/view1" class="btn">view1</a>-->
-                            <li><a class="active" href="#/view1">About Us</a></li>
-                            <!--<a href="#/view2" class="btn">view2</a>-->
-                            <li><a href="#/view2">Contacts</a></li>
+                            <li><a class="active" href="#/aboutus">About Us</a></li>
+                            <li><a  href="#/services">Services</a></li>
+                            <li><a  href="#/catalogue">Catalogue</a></li>
+                            <li><a  href="#/pricing">Pricing</a></li>
+                            <li><a  href="#/contacts">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -63,8 +59,88 @@
         </div>
     </div>
 </header>
-<div ng-view class="well well-small"></div>
+<div ng-view class="well well-small">
+</div>
 
+<!--==============================footer=================================-->
+<footer>
+    <div class="main">
+        <div class="container_12">
+            <div class="wrapper">
+                <div class="grid_4">
+                    <div>Interior Design &copy; 2011 <a class="link color-3" href="#">Privacy Policy</a></div>
+                    <div>More Templates <a href="http://www.mycodes.net/" target="_blank" title="源码之家">源码之家</a></div>
+                    <!-- {%FOOTER_LINK} -->
+                </div>
+                <div class="grid_4">
+                    <span class="phone-numb"><span>+1(800)</span> 123-1234</span>
+                </div>
+                <div class="grid_4">
+                    <ul class="list-services">
+                        <li><a href="#"></a></li>
+                        <li><a class="item-2" href="#"></a></li>
+                        <li><a class="item-3" href="#"></a></li>
+                        <li><a class="item-4" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    $(window).load(function() {
+        alert($('div.navigation'));
+        // We only want these styles applied when javascript is enabled
+        $('div.navigation').css({'width' : '320px', 'float' : 'right'});
+        $('div.content').css('display', 'block');
+
+        // Initially set opacity on thumbs and add
+        // additional styling for hover effect on thumbs
+        var onMouseOutOpacity = 0.5;
+        $('#thumbs ul.thumbs li span').opacityrollover({
+            mouseOutOpacity:   onMouseOutOpacity,
+            mouseOverOpacity:  0.0,
+            fadeSpeed:         'fast',
+            exemptionSelector: '.selected'
+        });
+
+        // Initialize Advanced Galleriffic Gallery
+        var gallery = $('#thumbs').galleriffic({
+            delay:                     7000,
+            numThumbs:                 12,
+            preloadAhead:              6,
+            enableTopPager:            false,
+            enableBottomPager:         false,
+            imageContainerSel:         '#slideshow',
+            controlsContainerSel:      '',
+            captionContainerSel:       '',
+            loadingContainerSel:       '',
+            renderSSControls:          true,
+            renderNavControls:         true,
+            playLinkText:              'Play Slideshow',
+            pauseLinkText:             'Pause Slideshow',
+            prevLinkText:              'Prev',
+            nextLinkText:              'Next',
+            nextPageLinkText:          'Next',
+            prevPageLinkText:          'Prev',
+            enableHistory:             true,
+            autoStart:                 7000,
+            syncTransitions:           true,
+            defaultTransitionDuration: 900,
+            onSlideChange:             function(prevIndex, nextIndex) {
+                // 'this' refers to the gallery, which is an extension of $('#thumbs')
+                this.find('ul.thumbs li span')
+                        .css({opacity:0.5})
+            },
+            onPageTransitionOut:       function(callback) {
+                this.find('ul.thumbs li span').css({display:'block'});
+            },
+            onPageTransitionIn:        function() {
+                this.find('ul.thumbs li span').css({display:'none'});
+            }
+        });
+    });
+</script>
 <script data-main="js/main" src="lib/require/require.js"></script>
 
 <script>

@@ -10,10 +10,14 @@
 define(['app', 'utils/route-config'], function (app, routeConfig) {
 
     return app.config(function ($routeProvider) {
-        $routeProvider.when('/view1', routeConfig.config('../partials/view1.html', 'controllers/first'));
-        $routeProvider.when('/view2', routeConfig.config('../partials/view2.html', 'controllers/second', ['directives/version']));
+        $routeProvider.when('/aboutus', routeConfig.config('../partials/aboutus.html', 'controllers/aboutus'));
+        $routeProvider.when('/services', routeConfig.config('../partials/services.html', 'controllers/services', ['directives/version']));
+        $routeProvider.when('/catalogue', routeConfig.config('../partials/catalogue.html', 'controllers/catalogue'));
+        $routeProvider.when('/pricing', routeConfig.config('../partials/pricing.html', 'controllers/pricing'));
+        $routeProvider.when('/contacts', routeConfig.config('../partials/contacts.html', 'controllers/contacts'));
 
-        $routeProvider.otherwise({redirectTo:'/view1'});
+
+        $routeProvider.otherwise({redirectTo:'/aboutus'});
     });
 
     return app;
