@@ -31,6 +31,17 @@
                 scroll: 1
             });
         });
+
+        function menuClick(ele){
+           var aaaaa= $("#aaaa >a");
+
+
+            console.log(aaaaa);
+//            var e = ele.siblings();
+//            console.log(e);
+            var e = $('#cat').siblings();
+            console.log(e);
+        }
     </script>
 
 </head>
@@ -42,10 +53,10 @@
             <div class="container_12">
                 <div class="grid_12">
                     <nav>
-                        <ul class="menu">
-                            <li><a  href="#/aboutus">About Us</a></li>
+                        <ul class="menu" id="aaaa">
+                            <li><a  href="#/aboutus" onclick="menuClick(this)">About Us</a></li>
                             <li><a class="{{focusclass}}" href="#/services">Services</a></li>
-                            <li><a  href="#/catalogue">Catalogue</a></li>
+                            <li><a id="cat" href="#/catalogue">Catalogue</a></li>
                             <li><a  href="#/pricing">Pricing</a></li>
                             <li><a  href="#/contacts">Contacts</a></li>
                         </ul>
