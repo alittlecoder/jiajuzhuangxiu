@@ -33,14 +33,8 @@
         });
 
         function menuClick(ele){
-           var aaaaa= $("#aaaa >a");
-
-
-            console.log(aaaaa);
-//            var e = ele.siblings();
-//            console.log(e);
-            var e = $('#cat').siblings();
-            console.log(e);
+            $(".active").removeClass("active");
+            $(ele).addClass("active");
         }
     </script>
 
@@ -53,12 +47,12 @@
             <div class="container_12">
                 <div class="grid_12">
                     <nav>
-                        <ul class="menu" id="aaaa">
-                            <li><a  href="#/aboutus" onclick="menuClick(this)">About Us</a></li>
-                            <li><a class="{{focusclass}}" href="#/services">Services</a></li>
-                            <li><a id="cat" href="#/catalogue">Catalogue</a></li>
-                            <li><a  href="#/pricing">Pricing</a></li>
-                            <li><a  href="#/contacts">Contacts</a></li>
+                        <ul class="menu">
+                            <li><a  href="#/aboutus"  class="active" onclick="menuClick(this)">About Us</a></li>
+                            <li><a  href="#/services" onclick="menuClick(this)">Services</a></li>
+                            <li><a  href="#/catalogue" onclick="menuClick(this)">Catalogue</a></li>
+                            <li><a  href="#/pricing" onclick="menuClick(this)">Pricing</a></li>
+                            <li><a  href="#/contacts" onclick="menuClick(this)">Contacts</a></li>
                         </ul>
                     </nav>
                 </div>

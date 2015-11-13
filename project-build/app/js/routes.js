@@ -16,6 +16,8 @@ define(['app', 'utils/route-config'], function (app, routeConfig) {
         $routeProvider.when('/pricing', routeConfig.config('../partials/pricing.html', 'controllers/pricing'));
         $routeProvider.when('/contacts', routeConfig.config('../partials/contacts.html', 'controllers/contacts'));
 
+        //¶þ¼¶Ò³Ãæ
+        $routeProvider.when('/projecthappytime', routeConfig.config('../partials/projectlist/happtime83.html', 'controllers/happytime'));
 
         $routeProvider.otherwise({redirectTo:'/aboutus'});
     });
