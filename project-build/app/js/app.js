@@ -6,16 +6,17 @@
  */
 'use strict';
 
-define(['angular', 'utils/route-config'], function (angular, routeConfig, lazyDirectives) {
+define(['angular', 'utils/route-config','angularresource'], function (angular, routeConfig, lazyDirectives) {
 
 
-    var app = angular.module('myApp', [], function ($compileProvider, $controllerProvider) {
+    var app = angular.module('myApp', ['ngResource'], function ($compileProvider, $controllerProvider) {
         routeConfig.setCompileProvider($compileProvider);
         routeConfig.setControllerProvider($controllerProvider);
     });
 
     app.controller('indexController',function($scope){
         $scope.focusclass="active";
+
     })
 
     return app;

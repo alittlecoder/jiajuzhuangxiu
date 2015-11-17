@@ -12,11 +12,16 @@ require.config({
     paths:{
         text:'../lib/require/text',
         jquery:'../lib/jquery/jquery',
-        angular:'../lib/angular/angular'
+        angular:'../lib/angular/angular',
+        angularresource:'../lib/angular/angular-resource'
     },
     shim:{
         'angular':{
             exports:'angular'
+        },
+        'angularresource':{
+            deps: ['angular'],
+            exports:'angularresource'
         }
     },
     priority:[
