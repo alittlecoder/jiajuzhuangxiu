@@ -23,11 +23,12 @@ require.config({
             deps: ['angular'],
             exports:'angularresource'
         }
-    },
-    priority:[
-        'angular'
-    ],
-    urlArgs:'v=1.1'
+    }
+    //,
+    //priority:[
+    //    'angular'
+    //],
+    //urlArgs:'v=1.1'
 });
 
 require([
